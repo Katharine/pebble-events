@@ -48,3 +48,23 @@ typedef void(*EventTickHandler)(struct tm *tick_time, TimeUnits units_changed, v
 EventHandle events_tick_timer_service_subscribe(TimeUnits units, TickHandler handler);
 EventHandle events_tick_timer_service_subscribe_context(TimeUnits units, EventTickHandler handler, void *context);
 void events_tick_timer_service_unsubscribe(EventHandle handle);
+
+// Appmessage service
+
+typedef struct EventAppMessageHandlers {
+	AppMessageOutboxSent sent;
+	AppMessageOutboxFailed failed;
+	AppMessageInboxReceived received;
+	AppMessageInboxDropped dropped;
+} EventAppMessageHandlers;
+
+void events_app_message_request_inbox_size(uint32_t size);
+void events_app_message_request_outbox_size(uint32_t size);
+AppMessageResult events_app_message_open(void);
+EventHandle events_app_message_subscribe_handlers(EventAppMessageHandlers handlers, void *context);
+
+// For consistency with the official SDK.
+EventHandle events_app_message_register_outbox_sent(AppMessageOutboxSent sent_callback, void *context);
+EventHandle events_app_message_register_outbox_failed(AppMessageOutboxFailed failed_callback, void *context);
+EventHandle events_app_message_register_inbox_received(AppMessageInboxReceived received_callback, void *context);
+EventHandle events_app_message_register_inbox_dropped(AppMessageInboxDropped dropped_callback, void *context);
