@@ -1,0 +1,26 @@
+{
+  "name": "pebble-events",
+  "author": "MakeAwesomeHappen",
+  "version": "1.0.0",
+  "files": [
+    "dist.zip"
+  ],
+  "keywords": [
+    "pebble-package"
+  ],
+  "dependencies": {
+    "@smallstoneapps/linked-list": "file:///Users/katharine/projects/linked-list"
+  },
+  "pebble": {
+    "projectType": "package",
+    "sdkVersion": "3",
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk"
+    ],
+    "resources": {
+      "media": []
+    }
+  }
+}
