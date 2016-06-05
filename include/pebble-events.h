@@ -40,7 +40,7 @@ void events_connection_service_unsubscribe(EventHandle handle);
 // Health service
 
 EventHandle events_health_service_events_subscribe(HealthEventHandler handler, void *context);
-void events_health_service_events_unsubscribe(EventHandle handle);
+bool events_health_service_events_unsubscribe(EventHandle handle);
 
 // Tick timer service
 
