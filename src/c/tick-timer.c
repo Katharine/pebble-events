@@ -89,7 +89,7 @@ static bool prv_add_to_subscription(void *object, void *context) {
   return true;
 }
 
-void events_battery_state_service_unsubscribe(EventHandle handle) {
+void events_tick_timer_service_unsubscribe(EventHandle handle) {
   int16_t index = linked_list_find(s_handler_list, handle);
   if (index == -1) {
     return;
