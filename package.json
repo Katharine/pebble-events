@@ -9,7 +9,7 @@
     "pebble-package"
   ],
   "dependencies": {
-    "@smallstoneapps/linked-list": "file:///Users/katharine/projects/linked-list"
+    "@smallstoneapps/linked-list": "^1.2.1"
   },
   "pebble": {
     "projectType": "package",
