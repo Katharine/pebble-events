@@ -1,13 +1,12 @@
 {
   "name": "pebble-events",
-  "author": "MakeAwesomeHappen",
-  "version": "1.0.0",
-  "files": [
-    "dist.zip"
-  ],
-  "keywords": [
-    "pebble-package"
-  ],
+  "author": "Katharine Berry <katharine@pebble.com>",
+  "version": "0.1.2",
+  "license": "MIT",
+  "files": ["dist.zip"],
+  "keywords": ["pebble-package"],
+  "description": "A library to fix the Pebble SDK's event services.",
+  "repository": "Katharine/pebble-events",
   "dependencies": {
     "@smallstoneapps/linked-list": "^1.2.1"
   },
