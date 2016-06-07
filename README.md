@@ -109,6 +109,12 @@ To subscribe to more than one appmessage callback at once, you can use
 `events_app_message_subscribe_handlers`. Otherwise, analogues to the SDK's
 standard appmessage functions are also available.
 
+Keep in mind that you will receive all appmessages, even if you did not expect
+them. Check for a key that your code sends to ensure it is intended for you.
+If you could have multiple instances that should not all process a given
+message, include some means of determining which instance should handle it (e.g. if
+it's a request/response, a pointer cast to a uint32 could work).
+
 ```c
 typedef struct EventAppMessageHandlers {
 	AppMessageOutboxSent sent;
