@@ -14,7 +14,7 @@ typedef struct FocusHandlers {
   void *context;
 } FocusHandlers;
 
-static bool prv_each_did_focus(void *ctx, void *object) {
+static bool prv_each_did_focus(void *object, void *ctx) {
   bool in_focus = (bool)ctx;
   FocusHandlers *handlers = object;
   if (handlers->has_context) {
@@ -29,7 +29,7 @@ static bool prv_each_did_focus(void *ctx, void *object) {
   return true;
 }
 
-static bool prv_each_will_focus(void *ctx, void *object) {
+static bool prv_each_will_focus(void *object, void *ctx) {
   bool in_focus = (bool)ctx;
   FocusHandlers *handlers = object;
   if (handlers->has_context) {
