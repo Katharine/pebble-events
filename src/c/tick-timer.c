@@ -96,10 +96,10 @@ void events_tick_timer_service_unsubscribe(EventHandle handle) {
   }
   free(linked_list_get(s_handler_list, index));
   linked_list_remove(s_handler_list, index);
+  s_current_subscription = 0;
   if (linked_list_count(s_handler_list) == 0) {
     tick_timer_service_unsubscribe();
   } else {
-    s_current_subscription = 0;
     linked_list_foreach(s_handler_list, prv_add_to_subscription, NULL);
     tick_timer_service_subscribe(s_current_subscription, prv_tick);
   }
