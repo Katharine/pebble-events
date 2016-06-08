@@ -62,6 +62,7 @@ void events_app_message_request_inbox_size(uint32_t size);
 void events_app_message_request_outbox_size(uint32_t size);
 AppMessageResult events_app_message_open(void);
 EventHandle events_app_message_subscribe_handlers(EventAppMessageHandlers handlers, void *context);
+void events_app_message_unsubscribe(EventHandle handle);
 
 // For consistency with the official SDK.
 EventHandle events_app_message_register_outbox_sent(AppMessageOutboxSent sent_callback, void *context);
