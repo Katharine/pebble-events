@@ -77,7 +77,7 @@ EventHandle events_health_service_events_subscribe(HealthEventHandler handler, v
 bool events_health_service_events_unsubscribe(EventHandle handle);
 ```
 
-### Tick timer service
+### Tick Timer Service
 
 Wrapping the SDK [TickTimerService](https://developer.pebble.com/docs/c/Foundation/Event_Service/TickTimerService/),
 with similar behaviour. Unlike the `TickTimerService`, however, we will not
@@ -133,4 +133,15 @@ EventHandle events_app_message_register_outbox_sent(AppMessageOutboxSent sent_ca
 EventHandle events_app_message_register_outbox_failed(AppMessageOutboxFailed failed_callback, void *context);
 EventHandle events_app_message_register_inbox_received(AppMessageInboxReceived received_callback, void *context);
 EventHandle events_app_message_register_inbox_dropped(AppMessageInboxDropped dropped_callback, void *context);
+```
+
+### Accelerometer Tap Service
+
+Wrapping the _Tap_ part of the SDK [AccelerometerService](https://developer.pebble.com/docs/c/Foundation/Event_Service/AccelerometerService/),
+with the same behaviour.
+
+```c
+EventHandle events_accel_tap_service_subscribe(AccelTapHandler handler);
+EventHandle events_accel_tap_service_subscribe_context(EventAccelTapHandler handler, void *context);
+void events_accel_tap_service_unsubscribe(EventHandle handle);
 ```
