@@ -4,7 +4,6 @@
 #include "pebble-events.h"
 
 static LinkedRoot *s_handler_list;
-static TimeUnits s_current_subscription;
 
 typedef struct TapHandler {
   bool has_context;
