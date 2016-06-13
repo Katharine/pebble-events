@@ -95,6 +95,8 @@ void events_connection_service_unsubscribe(EventHandle handle) {
   linked_list_remove(s_handler_list, index);
   if (linked_list_count(s_handler_list) == 0) {
     connection_service_unsubscribe();
+    free(s_handler_list);
+    s_handler_list = NULL;
   }
 }
 
