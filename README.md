@@ -134,3 +134,14 @@ EventHandle events_app_message_register_outbox_failed(AppMessageOutboxFailed fai
 EventHandle events_app_message_register_inbox_received(AppMessageInboxReceived received_callback, void *context);
 EventHandle events_app_message_register_inbox_dropped(AppMessageInboxDropped dropped_callback, void *context);
 ```
+
+### Unobstructed Area Service
+
+Wrapping the SDK [UnobstructedAreaService](https://developer.pebble.com/docs/c/User_Interface/UnobstructedArea/),
+with the same behaviour. Note that no `_context` variant is provided because the
+native version already has a `context` parameter.
+
+```c
+EventHandle events_unobstructed_area_service_subscribe(UnobstructedAreaHandlers handlers, void *context);
+void events_unobstructed_area_service_unsubscribe(EventHandle handle);
+```
