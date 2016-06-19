@@ -145,3 +145,14 @@ EventHandle events_accel_tap_service_subscribe(AccelTapHandler handler);
 EventHandle events_accel_tap_service_subscribe_context(EventAccelTapHandler handler, void *context);
 void events_accel_tap_service_unsubscribe(EventHandle handle);
 ```
+
+### Unobstructed Area Service
+
+Wrapping the SDK [UnobstructedAreaService](https://developer.pebble.com/docs/c/User_Interface/UnobstructedArea/),
+with the same behaviour. Note that no `_context` variant is provided because the
+native version already has a `context` parameter.
+
+```c
+EventHandle events_unobstructed_area_service_subscribe(UnobstructedAreaHandlers handlers, void *context);
+void events_unobstructed_area_service_unsubscribe(EventHandle handle);
+```
