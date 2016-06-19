@@ -76,3 +76,8 @@ typedef void(*EventAccelTapHandler)(AccelAxisType axis, int32_t direction, void 
 EventHandle events_accel_tap_service_subscribe(AccelTapHandler handler);
 EventHandle events_accel_tap_service_subscribe_context(EventAccelTapHandler handler, void *context);
 void events_accel_tap_service_unsubscribe(EventHandle handle);
+
+// unobstructed area service
+
+EventHandle events_unobstructed_area_service_subscribe(UnobstructedAreaHandlers handlers, void *context);
+void events_unobstructed_area_service_unsubscribe(EventHandle handle);
