@@ -69,3 +69,8 @@ EventHandle events_app_message_register_outbox_sent(AppMessageOutboxSent sent_ca
 EventHandle events_app_message_register_outbox_failed(AppMessageOutboxFailed failed_callback, void *context);
 EventHandle events_app_message_register_inbox_received(AppMessageInboxReceived received_callback, void *context);
 EventHandle events_app_message_register_inbox_dropped(AppMessageInboxDropped dropped_callback, void *context);
+
+// unobstructed area service
+
+EventHandle events_unobstructed_area_service_subscribe(UnobstructedAreaHandlers handlers, void *context);
+void events_unobstructed_area_service_unsubscribe(EventHandle handle);
