@@ -130,6 +130,8 @@ void events_app_message_unsubscribe(EventHandle handle) {
   free(linked_list_get(s_handler_list, index));
   linked_list_remove(s_handler_list, index);
   if (linked_list_count(s_handler_list) == 0) {
+    free(s_handler_list);
+    s_handler_list = NULL;
     app_message_deregister_callbacks();
   }
 }
