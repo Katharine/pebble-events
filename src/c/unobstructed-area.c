@@ -1,6 +1,8 @@
 #include <pebble.h>
 #include <@smallstoneapps/linked-list/linked-list.h>
 
+#if PBL_API_EXISTS(unobstructed_area_service_subscribe)
+
 #include "pebble-events.h"
 
 static LinkedRoot *s_handler_list;
@@ -83,3 +85,5 @@ void events_unobstructed_area_service_unsubscribe(EventHandle handle) {
     unobstructed_area_service_unsubscribe();
   }
 }
+
+#endif // PBL_API_EXISTS(unobstructed_area_service_subscribe)
