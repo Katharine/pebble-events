@@ -7,6 +7,9 @@ to those that didn't already have one.
 
 Everyone should use it!
 
+**Note**: This library depends on Pebble SDK 3.14 or greater for the `PBL_API_EXISTS`
+macro.
+
 Installation
 ------------
 

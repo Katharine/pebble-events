@@ -1,7 +1,7 @@
 {
   "name": "pebble-events",
   "author": "Katharine Berry <katharine@pebble.com>",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "license": "MIT",
   "files": ["dist.zip"],
   "keywords": ["pebble-package"],
