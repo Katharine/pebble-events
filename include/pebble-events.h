@@ -69,3 +69,10 @@ EventHandle events_app_message_register_outbox_sent(AppMessageOutboxSent sent_ca
 EventHandle events_app_message_register_outbox_failed(AppMessageOutboxFailed failed_callback, void *context);
 EventHandle events_app_message_register_inbox_received(AppMessageInboxReceived received_callback, void *context);
 EventHandle events_app_message_register_inbox_dropped(AppMessageInboxDropped dropped_callback, void *context);
+
+// accel tap service
+
+typedef void(*EventAccelTapHandler)(AccelAxisType axis, int32_t direction, void *context);
+EventHandle events_accel_tap_service_subscribe(AccelTapHandler handler);
+EventHandle events_accel_tap_service_subscribe_context(EventAccelTapHandler handler, void *context);
+void events_accel_tap_service_unsubscribe(EventHandle handle);
