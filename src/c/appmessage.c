@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include <@smallstoneapps/linked-list/linked-list.h>
+#include <@rebble/linked-list/linked-list.h>
 
 #include "pebble-events.h"
 
