@@ -1,0 +1,30 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/pebble-dev/pebbleos-docker:v1
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+      - run: uv tool install pebble-tool
+      - name: Update npm
+        run: npm install -g npm@latest
+      - run: npm install
+      - run: pebble build
+      - run: npm publish
