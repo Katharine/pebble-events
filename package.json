@@ -8,7 +8,7 @@
   "description": "A library to fix the Pebble SDK's event services.",
   "repository": "Katharine/pebble-events",
   "dependencies": {
-    "@rebble/linked-list": "^1.5.0"
+    "@rebble/linked-list": "^1.5.1"
   },
   "pebble": {
     "projectType": "package",
@@ -19,7 +19,8 @@
       "chalk",
       "diorite",
       "emery",
-      "flint"
+      "flint",
+      "gabbro"
     ],
     "resources": {
       "media": []

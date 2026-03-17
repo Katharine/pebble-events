@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include <@smallstoneapps/linked-list/linked-list.h>
+#include <@rebble/linked-list/linked-list.h>
 
 #if PBL_API_EXISTS(unobstructed_area_service_subscribe)
 
